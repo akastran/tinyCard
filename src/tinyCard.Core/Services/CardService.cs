@@ -102,32 +102,27 @@ namespace tinyCard.Core.Services
             
             if (card != null)
             {
-                var changedCard = new Card()
-                {
-                    CardNumber = card.CardNumber,
-                    CurrentBalance = card.CurrentBalance
-                };
-                var newLimit = new Limit();
-
-                if (card.CardLimits == null)
+                if ((card.CardLimits) == null || ((card.CardLimits) != null && (card.CardLimits.Count < 2)))
                 {
                     if ((options.TransactionAmount <= 1500M) && ((TransactionType)options.IntTranType == TransactionType.CardPresent))
                     {
+                        var newLimit = new Limit();
                         newLimit.TranType = TransactionType.CardPresent;
                         newLimit.LimitDate = DateTimeOffset.Now.Date;
                         newLimit.TranTypeLimit = 1500M;
                         newLimit.TranTypeBalance = options.TransactionAmount;
-                        changedCard.CardLimits.Add(newLimit);
-                        changedCard.CurrentBalance += options.TransactionAmount;
+                        card.CardLimits.Add(newLimit);
+                        card.CurrentBalance += options.TransactionAmount;
                     }
                     else if ((options.TransactionAmount <= 500M) && ((TransactionType)options.IntTranType == TransactionType.Ecommerce))
                     {
+                        var newLimit = new Limit();
                         newLimit.TranType = TransactionType.Ecommerce;
                         newLimit.LimitDate = DateTimeOffset.Now.Date;
                         newLimit.TranTypeLimit = 500M;
                         newLimit.TranTypeBalance = options.TransactionAmount;
-                        changedCard.CardLimits.Add(newLimit);
-                        changedCard.CurrentBalance += options.TransactionAmount;
+                        card.CardLimits.Add(newLimit);
+                        card.CurrentBalance += options.TransactionAmount;
                     }
                     else
                     {
@@ -144,12 +139,8 @@ namespace tinyCard.Core.Services
                             {
                                 if (item.TranTypeBalance + options.TransactionAmount <= item.TranTypeLimit)
                                 {
-                                    newLimit.TranType = (TransactionType)intTransactionType;
-                                    newLimit.LimitDate = DateTimeOffset.Now.Date;
-                                    newLimit.TranTypeLimit = item.TranTypeLimit;
-                                    newLimit.TranTypeBalance = item.TranTypeBalance + options.TransactionAmount;
-                                    changedCard.CardLimits.Add(newLimit);
-                                    changedCard.CurrentBalance += options.TransactionAmount;
+                                    item.TranTypeBalance = item.TranTypeBalance + options.TransactionAmount;
+                                    card.CurrentBalance += options.TransactionAmount;
                                 }
                                 else
                                 {
@@ -160,12 +151,9 @@ namespace tinyCard.Core.Services
                             {
                                 if (options.TransactionAmount <= item.TranTypeLimit)
                                 {
-                                    newLimit.TranType = (TransactionType)intTransactionType;
-                                    newLimit.LimitDate = DateTimeOffset.Now.Date;
-                                    newLimit.TranTypeLimit = item.TranTypeLimit;
-                                    newLimit.TranTypeBalance = options.TransactionAmount;
-                                    changedCard.CardLimits.Add(newLimit);
-                                    changedCard.CurrentBalance += options.TransactionAmount;
+                                    item.LimitDate = DateTimeOffset.Now.Date;
+                                    item.TranTypeBalance = options.TransactionAmount;
+                                    card.CurrentBalance += options.TransactionAmount;
                                 }
                                 else
                                 {
@@ -176,10 +164,10 @@ namespace tinyCard.Core.Services
                     }
                 }
 
-                _dbContext.Update(changedCard);
+                _dbContext.Update(card);
                 _dbContext.SaveChanges();
                 
-                return (changedCard);
+                return (card);
             }
             else
             {
