@@ -25,7 +25,7 @@ namespace tinyCard.app
             var optionsBuilder = new DbContextOptionsBuilder<CardDbContext>();
 
             optionsBuilder.UseSqlServer(
-                config.tinyCardConnectionString,
+                config.TinyCardConnectionString,
                 options => {
                     options.MigrationsAssembly("tinyCard.app");
                 });

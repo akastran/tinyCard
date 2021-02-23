@@ -7,6 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "tinyCard.app", "app\tinyCar
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "app", "app", "{7C7014C4-0129-4C11-8669-28E90D9DCF19}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{2C9A9560-C514-4C34-B038-0C27EA7C7821}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tinyCard.Core", "src\tinyCard.Core\tinyCard.Core.csproj", "{2404EC06-76EA-40E0-A0B7-3477ED2C6D18}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,12 +21,17 @@ Global
 		{B23BDC35-009B-4A49-BC3D-CB854660DB6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B23BDC35-009B-4A49-BC3D-CB854660DB6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B23BDC35-009B-4A49-BC3D-CB854660DB6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2404EC06-76EA-40E0-A0B7-3477ED2C6D18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2404EC06-76EA-40E0-A0B7-3477ED2C6D18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2404EC06-76EA-40E0-A0B7-3477ED2C6D18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2404EC06-76EA-40E0-A0B7-3477ED2C6D18}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{B23BDC35-009B-4A49-BC3D-CB854660DB6A} = {7C7014C4-0129-4C11-8669-28E90D9DCF19}
+		{2404EC06-76EA-40E0-A0B7-3477ED2C6D18} = {2C9A9560-C514-4C34-B038-0C27EA7C7821}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {95237CAF-D253-44EA-BE1B-0A69BDABB28B}
