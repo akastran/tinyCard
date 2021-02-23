@@ -10,7 +10,7 @@ using tinyCard.Core.Data;
 namespace tinyCard.app.Migrations
 {
     [DbContext(typeof(CardDbContext))]
-    [Migration("20210223085605_InitialCreate")]
+    [Migration("20210223094255_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -26,10 +26,7 @@ namespace tinyCard.app.Migrations
                     b.Property<string>("CardNumber")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<decimal>("CardPresentBalance")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<decimal>("EcommerceBalance")
+                    b.Property<decimal>("CurrentBalance")
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("CardNumber");

@@ -9,8 +9,7 @@ namespace tinyCard.Core.Model
     public class Card
     {
         public string CardNumber { get; set; }
-        public decimal CardPresentBalance { get; set; }
-        public decimal EcommerceBalance { get; set; }
+        public decimal CurrentBalance { get; set; }
         public List<Limit> CardLimits { get; set; }
         public Card()
         {

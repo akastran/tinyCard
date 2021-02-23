@@ -12,8 +12,7 @@ namespace tinyCard.app.Migrations
                 columns: table => new
                 {
                     CardNumber = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    CardPresentBalance = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    EcommerceBalance = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
+                    CurrentBalance = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
                 },
                 constraints: table =>
                 {

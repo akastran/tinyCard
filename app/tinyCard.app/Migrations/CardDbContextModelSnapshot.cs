@@ -24,10 +24,7 @@ namespace tinyCard.app.Migrations
                     b.Property<string>("CardNumber")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<decimal>("CardPresentBalance")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<decimal>("EcommerceBalance")
+                    b.Property<decimal>("CurrentBalance")
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("CardNumber");

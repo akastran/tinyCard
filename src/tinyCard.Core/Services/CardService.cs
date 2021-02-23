@@ -12,6 +12,7 @@ namespace tinyCard.Core.Services
     public class CardService : ICardService
     {
         private CardDbContext _dbContext;
+        private ILimitService _limits;
 
         public CardService(CardDbContext dbContext)
         {
@@ -41,12 +42,7 @@ namespace tinyCard.Core.Services
                 }
             }
 
-            if (options?.CardPresentBalance == null)
-            {
-                return null;
-            }
-
-            if (options?.EcommerceBalance == null)
+            if (options?.CurrentBalance == null)
             {
                 return null;
             }
@@ -54,8 +50,7 @@ namespace tinyCard.Core.Services
             var card = new Card()
             {
                 CardNumber = options.CardNumber,
-                CardPresentBalance = options.CardPresentBalance,
-                EcommerceBalance = options.EcommerceBalance,
+                CurrentBalance = options.CurrentBalance
             };
 
             _dbContext.Add(card);

@@ -27,9 +27,8 @@ namespace tinyCard.Core.Tests
         {
             var options = new Services.Options.IssueNewCardOptions()
             {
-                CardNumber = "1358789645366985",
-                CardPresentBalance = 0M,
-                EcommerceBalance = 0M
+                CardNumber = "1358789645366987",
+                CurrentBalance = 0M
             };
 
             var card = await _card.IssueNewCardAsync(options);
@@ -42,8 +41,7 @@ namespace tinyCard.Core.Tests
 
             Assert.NotNull(savedCard);
             Assert.Equal(options.CardNumber, savedCard.CardNumber);
-            Assert.Equal(options.CardPresentBalance, savedCard.CardPresentBalance);
-            Assert.Equal(options.EcommerceBalance, savedCard.EcommerceBalance);
+            Assert.Equal(options.CurrentBalance, savedCard.CurrentBalance);
         }
     }
 }

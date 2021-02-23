@@ -3,13 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using tinyCard.Core.Model;
 
 namespace tinyCard.Core.Services.Options
 {
-    public class IssueNewCardOptions
+    public class IssueNewCardLimitsOptions
     {
         public string CardNumber { get; set; }
-        public decimal CurrentBalance { get; set; }
     }
 }
