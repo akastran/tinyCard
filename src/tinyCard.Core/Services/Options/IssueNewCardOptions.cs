@@ -10,7 +10,7 @@ namespace tinyCard.Core.Services.Options
     public class IssueNewCardOptions
     {
         public string CardNumber { get; set; }
-        public decimal CardPresentAvailableBalance { get; set; }
-        public decimal EcommerceAvailableBalance { get; set; }
+        public decimal CardPresentBalance { get; set; }
+        public decimal EcommerceBalance { get; set; }
     }
 }

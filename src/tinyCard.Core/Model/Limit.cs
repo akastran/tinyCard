@@ -12,6 +12,6 @@ namespace tinyCard.Core.Model
         public TransactionType TranType { get; set; }
         public DateTimeOffset LimitDate { get; set; }
         public decimal TranTypeLimit { get; set; }
-        public decimal TranTypeCurrentBalance { get; set; }
+        public decimal TranTypeBalance { get; set; }
     }
 }

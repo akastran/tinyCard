@@ -12,8 +12,8 @@ namespace tinyCard.app.Migrations
                 columns: table => new
                 {
                     CardNumber = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    CardPresentAvailableBalance = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    EcommerceAvailableBalance = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
+                    CardPresentBalance = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    EcommerceBalance = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -28,7 +28,7 @@ namespace tinyCard.app.Migrations
                     TranType = table.Column<int>(type: "int", nullable: false),
                     LimitDate = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: false),
                     TranTypeLimit = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    TranTypeCurrentBalance = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    TranTypeBalance = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     CardNumber = table.Column<string>(type: "nvarchar(450)", nullable: true)
                 },
                 constraints: table =>

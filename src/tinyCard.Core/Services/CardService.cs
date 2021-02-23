@@ -41,12 +41,12 @@ namespace tinyCard.Core.Services
                 }
             }
 
-            if (options?.CardPresentAvailableBalance == null)
+            if (options?.CardPresentBalance == null)
             {
                 return null;
             }
 
-            if (options?.EcommerceAvailableBalance == null)
+            if (options?.EcommerceBalance == null)
             {
                 return null;
             }
@@ -54,8 +54,8 @@ namespace tinyCard.Core.Services
             var card = new Card()
             {
                 CardNumber = options.CardNumber,
-                CardPresentAvailableBalance = options.CardPresentAvailableBalance,
-                EcommerceAvailableBalance = options.EcommerceAvailableBalance,
+                CardPresentBalance = options.CardPresentBalance,
+                EcommerceBalance = options.EcommerceBalance,
             };
 
             _dbContext.Add(card);
