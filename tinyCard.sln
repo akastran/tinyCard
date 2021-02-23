@@ -15,6 +15,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{55A65679
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tinyCard.Core.Tests", "tests\tinyCard.Core.Tests\tinyCard.Core.Tests.csproj", "{BE0E5D2C-07A4-491F-9719-A08E2A775696}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tinyCard.Api", "app\tinyCard.Api\tinyCard.Api.csproj", "{2E2EB4FC-2960-4C9C-B4D1-E8E456D11520}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{BE0E5D2C-07A4-491F-9719-A08E2A775696}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE0E5D2C-07A4-491F-9719-A08E2A775696}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE0E5D2C-07A4-491F-9719-A08E2A775696}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E2EB4FC-2960-4C9C-B4D1-E8E456D11520}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E2EB4FC-2960-4C9C-B4D1-E8E456D11520}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E2EB4FC-2960-4C9C-B4D1-E8E456D11520}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E2EB4FC-2960-4C9C-B4D1-E8E456D11520}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -41,6 +47,7 @@ Global
 		{B23BDC35-009B-4A49-BC3D-CB854660DB6A} = {7C7014C4-0129-4C11-8669-28E90D9DCF19}
 		{2404EC06-76EA-40E0-A0B7-3477ED2C6D18} = {2C9A9560-C514-4C34-B038-0C27EA7C7821}
 		{BE0E5D2C-07A4-491F-9719-A08E2A775696} = {55A65679-1AA7-459D-B39E-AD0E001C9DFF}
+		{2E2EB4FC-2960-4C9C-B4D1-E8E456D11520} = {7C7014C4-0129-4C11-8669-28E90D9DCF19}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {95237CAF-D253-44EA-BE1B-0A69BDABB28B}
