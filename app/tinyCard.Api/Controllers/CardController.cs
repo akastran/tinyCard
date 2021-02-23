@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using tinyCard.Core.Services;
 using tinyCard.Core.Services.Options;
 
-namespace tinyBank.Api.Controllers
+namespace tinyCard.Api.Controllers
 {
     [ApiController]
     [Route("[controller]")]
@@ -37,13 +37,13 @@ namespace tinyBank.Api.Controllers
             return Json(card);
         }
 
-        //[HttpPost]
-        //public async Task<IActionResult> Register(
-        //    [FromBody] RegisterCustomerOptions options)
-        //{
-        //    var customer = await _customer.RegisterCustomerAsync(options);
+        [HttpPost]
+        public async Task<IActionResult> Authorize(
+            [FromBody] AuthorizeOptions options)
+        {
+            var card = await _card.AuthorizeAsync(options);
 
-        //    return Json(customer);
-        //}
+            return Json(card);
+        }
     }
 }
