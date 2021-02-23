@@ -24,14 +24,14 @@ namespace tinyCard.Core.Data
                 .ToTable("Card");
 
             modelBuilder.Entity<Card>()
-                .HasIndex(c => c.CardNumber)
-                .IsUnique();
+                .HasKey(c => c.CardNumber);
 
             modelBuilder.Entity<Limit>()
                 .ToTable("Limit");
 
             modelBuilder.Entity<Limit>()
-                .HasKey(c => c.LimitId);
+                .HasIndex(c => c.LimitId)
+                .IsUnique();
         }
     }
 }

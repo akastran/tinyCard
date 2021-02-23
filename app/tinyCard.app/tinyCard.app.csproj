@@ -18,4 +18,10 @@
     <ProjectReference Include="..\..\src\tinyCard.Core\tinyCard.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
