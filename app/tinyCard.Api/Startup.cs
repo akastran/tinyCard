@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using tinyCard.Core.Services.Extensions;
 
 namespace tinyCard.Api
 {
@@ -27,6 +28,7 @@ namespace tinyCard.Api
         {
 
             services.AddControllers();
+            services.AddAppServices(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

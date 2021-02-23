@@ -11,5 +11,6 @@ namespace tinyCard.Core.Services
     public interface ICardService
     {
         public Task<Card> IssueNewCardAsync(IssueNewCardOptions options);
+        public Task<Card> RetrieveCardAsync(RetrieveCardOptions options);
     }
 }

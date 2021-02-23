@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -57,6 +58,15 @@ namespace tinyCard.Core.Services
             await _dbContext.SaveChangesAsync();
 
             return card;
+        }
+
+        public async Task<Card> RetrieveCardAsync(RetrieveCardOptions options)
+        {
+            var dbCard = await _dbContext.Set<Card>()
+                .Where(c => c.CardNumber == options.CardNumber)
+                .SingleOrDefaultAsync();
+
+            return dbCard;
         }
     }
 }
